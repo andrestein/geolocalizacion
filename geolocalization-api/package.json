@@ -1,0 +1,26 @@
+{
+  "name": "geolocalization-api",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrestein/geolocalizacion.git"
+  },
+  "author": "Andres Granda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrestein/geolocalizacion/issues"
+  },
+  "homepage": "https://github.com/andrestein/geolocalizacion#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
