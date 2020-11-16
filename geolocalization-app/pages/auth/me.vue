@@ -4,55 +4,54 @@
       <div class="text-center"></div>
       <v-card>
         <v-card-title class="headline">
-          Hello {{currentData.name}}
+          Hello {{ currentData.name }}
         </v-card-title>
         <v-card-text>
-            <v-form>
-              <v-text-field
-                v-model="currentData.id"
-                label="Id"
-                name="Id"
-                type="text"
-                disabled
-                outlined
-              ></v-text-field>
-              <v-text-field
-                v-model="currentData.name"
-                label="Name"
-                name="Name"
-                type="text"                
-                outlined
-              ></v-text-field>
-              <v-text-field
-                v-model="currentData.email"
-                label="Email"
-                name="Email"
-                type="text"                
-                outlined
-              ></v-text-field>
-              <v-text-field
-                v-model="currentData.email_verified_at"
-                label="Email Verified"
-                name="emailVerified"
-                type="text"                
-                outlined
-              ></v-text-field>
-              <v-text-field
-                v-model="currentData.created_at"
-                label="Create at"
-                name="createAt"
-                type="text"                
-                outlined
-              ></v-text-field>
-              <v-text-field
-                v-model="currentData.updated_at"
-                label="Update At"
-                name="updateAt"
-                type="text"                
-                outlined
-              ></v-text-field>
-            </v-form>
-          </v-card-text>
+          <v-form>
+            <v-text-field
+              v-model="currentData.id"
+              label="Id"
+              name="Id"
+              type="text"
+              disabled
+              outlined
+            ></v-text-field>
+            <v-text-field
+              v-model="currentData.name"
+              label="Name"
+              name="Name"
+              type="text"
+              outlined
+            ></v-text-field>
+            <v-text-field
+              v-model="currentData.email"
+              label="Email"
+              name="Email"
+              type="text"
+              outlined
+            ></v-text-field>
+            <v-text-field
+              v-model="currentData.email_verified_at"
+              label="Email Verified"
+              name="emailVerified"
+              type="text"
+              outlined
+            ></v-text-field>
+            <v-text-field
+              v-model="currentData.created_at"
+              label="Create at"
+              name="createAt"
+              type="text"
+              outlined
+            ></v-text-field>
+            <v-text-field
+              v-model="currentData.updated_at"
+              label="Update At"
+              name="updateAt"
+              type="text"
+              outlined
+            ></v-text-field>
+          </v-form>
         </v-card-text>
       </v-card>
       <Toast />
@@ -80,16 +79,6 @@ export default {
     this.accountData();
   },
   methods: {
-    /**
-     * Aplica un formato a la fecha
-     */
-    formatDate(currentData) {
-      Object.keys(currentData).forEach((key) => {
-        if (key !== "id" && this.$moment(currentData[key])._isValid) {
-          currentData[key] = this.$moment(currentData[key]).format("DD/MM/YYYY");
-        }
-      });
-    },
     /**
      * Obtiene la informacion del usuario
      */
