@@ -11,10 +11,5 @@ git clone https://github.com/andrestein/geolocalizacion.git
 En la carpeta del proyecto ejecutar.
 
 cd geolocalization-app.
-npm run serve.
-
-3. Ejecutar Back
-
-En la carpeta del proyecto ejecutar.
-cd geolocalization-api.
-nodemon.
+npm run dev (Windows).
+npm run devl (Linux o mac).
