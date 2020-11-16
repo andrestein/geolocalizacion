@@ -1,10 +1,16 @@
 <template>
   <v-app dark>
     <v-app-bar color="primary" :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title
+        v-text="title"
+        @click="$router.push(config.routes.front.jobs.path)"
+      />
       <v-spacer />
       <template color="secondary">
-        <v-btn color="primary">
+        <v-btn
+          color="primary"
+          @click="$router.push(config.routes.front.me.path)"
+        >
           <v-icon color="secondary">mdi-account</v-icon>
           <div>Account</div>
         </v-btn>

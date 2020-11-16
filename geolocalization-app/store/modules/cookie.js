@@ -58,6 +58,15 @@ const getters = {
       console.log(error);
     }
   },
+  getHeader(state) {
+    try {
+      state.token = localStorage.getItem(config.cookie.token);
+      if (!state.token) state.token = VueCookie.get(config.cookie.token);
+      return {
+        Authorization: `Bearer ${state.token}`
+      };
+    } catch (error) { }
+  },
   getCookie: state => key => {
     let data = state[key]
     if (!data) {

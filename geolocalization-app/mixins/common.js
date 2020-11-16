@@ -7,7 +7,10 @@ export const common = {
   },
   methods: {
     ...mapMutations(['messageError', 'messageToast', 'setCookie', 'setData']),
-    getOptions() {
+    /**
+     * Header para envio en las peticiones.
+     */
+    getOptions() {      
       let header = this.$store.getters.getHeader
       return { headers: header }
     }
