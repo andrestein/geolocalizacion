@@ -10,7 +10,7 @@ let routes = {
     },
     jobs: {
       name: "jobs",
-      path: "/jobs"
+      path: "/"
     }
   },
   back:{
