@@ -17,11 +17,24 @@
           :loading="loading"
           class="elevation-1"
         >
+          <template v-slot:item.action="{ item }">
+            <v-icon
+              @click="                
+                job = Object.assign({}, item);
+                dialogJob = true;
+                $forceUpdate();
+              "
+              >mdi-eye</v-icon
+            >
+          </template>
         </v-data-table>
         <div class="text-center pt-2">
           <v-pagination v-model="page" :length="numberOfPages"></v-pagination>
         </div>
       </v-card-text>
+      <v-dialog v-model="dialogJob" max-width="450">
+        <job :job="job" />
+      </v-dialog>
       <Toast />
     </v-col>
   </v-row>
@@ -32,6 +45,7 @@ import config from "@/assets/js/config";
 import Toast from "@/components/Toast";
 import Job from "@/components/Job";
 import { common } from "@/mixins/common";
+
 export default {
   mixins: [common],
   data() {
@@ -40,11 +54,14 @@ export default {
       numberOfPages: 0,
       totalJobs: 0,
       jobs: [],
+      job: {},
       loading: true,
+      dialogJob: false,
       headers: [
         { text: "Title", value: "title" },
         { text: "Date", value: "date" },
         { text: "status", value: "status" },
+        { text: "Acciones", value: "action", sortable: false },
       ],
       options: {},
       path: config.routes.back.jobs.path,
@@ -52,7 +69,7 @@ export default {
       message: "",
     };
   },
-  components: { Toast },
+  components: { Toast, Job },
   mount() {
     this.jobsData();
   },
@@ -65,6 +82,9 @@ export default {
     deep: true,
   },
   methods: {
+    test(item){
+      console.log(item);
+    },
     /**
      * Obtiene la informacion del usuario
      */

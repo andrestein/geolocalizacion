@@ -9,6 +9,13 @@
       <template color="secondary">
         <v-btn
           color="primary"
+          @click="$router.push(config.routes.front.jobs.path)"
+        >
+          <v-icon color="secondary">mdi-home</v-icon>
+          <div>Home</div>
+        </v-btn>
+        <v-btn
+          color="primary"
           @click="$router.push(config.routes.front.me.path)"
         >
           <v-icon color="secondary">mdi-account</v-icon>

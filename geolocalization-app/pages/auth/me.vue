@@ -88,7 +88,7 @@ export default {
         let response = await this.$axios.get(url, this.getOptions());
         if (response.status == 200) {
           this.currentData = Object.assign({}, response.data);
-          this.formatDate(this.currentData);
+          this.currentData = this.formatDate(this.currentData);
         }
       } catch (error) {
         this.loading = false;

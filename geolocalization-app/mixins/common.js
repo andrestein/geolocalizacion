@@ -18,11 +18,13 @@ export const common = {
      * Aplica un formato a la fecha
      */
     formatDate(currentData) {
-      Object.keys(currentData).forEach((key) => {
-        if (!Number.isNaN(currentData[key]) && this.$moment(currentData[key])._isValid) {
-          currentData[key] = this.$moment(currentData[key]).format("DD/MM/YYYY");
+      let data = Object.assign({},currentData);
+      Object.keys(data).forEach((key) => {
+        if (!Number.isNaN(data[key]) && this.$moment(data[key])._isValid) {
+          data[key] = this.$moment(data[key]).format("DD/MM/YYYY");
         }
       });
+      return data
     },
   }
 }
