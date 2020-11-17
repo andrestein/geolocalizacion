@@ -19,10 +19,9 @@
         >
           <template v-slot:item.action="{ item }">
             <v-icon
-              @click="                
-                job = Object.assign({}, item);
+              @click="
+                job = item;
                 dialogJob = true;
-                $forceUpdate();
               "
               >mdi-eye</v-icon
             >
@@ -32,7 +31,7 @@
           <v-pagination v-model="page" :length="numberOfPages"></v-pagination>
         </div>
       </v-card-text>
-      <v-dialog v-model="dialogJob" max-width="450">
+      <v-dialog v-if="job.title" v-model="dialogJob" max-width="450">
         <job :job="job" />
       </v-dialog>
       <Toast />
@@ -82,7 +81,7 @@ export default {
     deep: true,
   },
   methods: {
-    test(item){
+    test(item) {
       console.log(item);
     },
     /**
