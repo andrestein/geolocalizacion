@@ -12,7 +12,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/rootstack.png' }
+      { rel: 'icon', type: 'image/png', href: '/rootstack-icon.png' }
     ]
   },
 

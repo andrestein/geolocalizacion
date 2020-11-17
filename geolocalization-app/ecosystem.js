@@ -1,6 +1,10 @@
 const info = {
     dev: {
-      port: 3000,
+      port: 80,
+      API_HOST: 'http://coding-test.rootstack.net/',
+    },
+    production: {
+      port: 80,
       API_HOST: 'http://coding-test.rootstack.net/',
     }
   }
